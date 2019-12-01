@@ -1,0 +1,27 @@
+question->Given a number n, we can divide it in only three parts n/2, n/3 and n/4 (we will consider only integer part). The task is to find the maximum sum we can make by dividing number in three parts recursively and summing up them together.
+
+answer->
+#include <iostream>
+using namespace std;
+int rec(int n){
+    if(n<=1){
+        return n;
+    }
+    else{
+        return max(rec(n/2)+rec(n/3)+rec(n/4),n);
+    }
+    
+}
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+       cout<< rec(n)<<endl;
+        
+    }
+	//code
+	return 0;
+}
